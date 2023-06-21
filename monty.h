@@ -15,9 +15,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 /**
  * struct instruction_s - opcode and its function
@@ -29,11 +29,12 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 void push(stack_t **s, unsigned int l_num, char *arg);
 void pall(stack_t **s, unsigned int l_num);
+void pint(stack_t **s, unsigned int l_num);
 stack_t *create_n_node(int val);
-void exec_bytcode(FILE *file);
+void exec_bytcode(instruction_t *inst, stack_t **s, unsigned int l_num);
 #endif

@@ -64,4 +64,6 @@ void nop(stack_t **s, unsigned int l_num);
 void sub(stack_t **s, unsigned int l_num);
 void free_stack(stack_t **stack);
 void free_all(void);
+void _div(stack_t **s, unsigned int l_num);
+
 #endif

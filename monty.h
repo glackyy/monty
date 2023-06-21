@@ -63,5 +63,4 @@ void add(stack_t **s, unsigned int l_num);
 void nop(stack_t **s, unsigned int l_num);
 void free_stack(stack_t **stack);
 void free_all(void);
-
 #endif

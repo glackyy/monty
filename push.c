@@ -4,9 +4,9 @@
  * @s: Pointer stack_t
  * @l_num: unsigned int
  */
+int val;
 void push(stack_t **s, unsigned int l_num)
 {
-int val;
 stack_t *new_n = NULL;
 (void)l_num;
 new_n = malloc(sizeof(stack_t));

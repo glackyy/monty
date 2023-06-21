@@ -14,6 +14,8 @@ instruction_t operate[] = {
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 f = strtok(line, " \n\t\r\a\v");

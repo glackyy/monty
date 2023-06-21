@@ -18,6 +18,7 @@ instruction_t operate[] = {
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 f = strtok(line, " \n\t\r\a\v");

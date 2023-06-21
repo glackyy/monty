@@ -1,5 +1,4 @@
 #include "monty.h"
-int val;
 /**
  * push - Entry Function
  * @s: Pointer stack_t
@@ -7,6 +6,7 @@ int val;
  */
 void push(stack_t **s, unsigned int l_num)
 {
+int val;
 stack_t *new_n = NULL;
 (void)l_num;
 new_n = malloc(sizeof(stack_t));

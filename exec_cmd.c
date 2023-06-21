@@ -1,9 +1,10 @@
 #include "monty.h"
 /**
- * exec_inst - Entry Function
+ * exec_cmd - Entry Function
  * @h: Pointer
  * @l_num: unsigned int
  * @line: char
+ * Return: 0
  */
 int exec_cmd(char *line, unsigned int l_num, stack_t **h)
 {
@@ -32,7 +33,7 @@ while (operate[i].opcode != NULL)
 				fprintf(stderr, "L%u: usage: push integer\n", l_num);
 				fclose(monty_data.file);
 				free(monty_data.line);
-		    		free_stack(h);
+				free_stack(h);
 				exit(EXIT_FAILURE);
 			}
 		}
@@ -41,7 +42,7 @@ while (operate[i].opcode != NULL)
 		}
 	else
 	{
-		if (operate[i+1].opcode == NULL)
+		if (operate[i + 1].opcode == NULL)
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", l_num, f);
 			fclose(monty_data.file);

@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * free_stack - Entry Function
- * @s: Pointer
+ * @stack: Pointer
  */
 void free_stack(stack_t **stack)
 {

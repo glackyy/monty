@@ -1,5 +1,4 @@
 #include "monty.h"
-Montydata monty_data = {NULL, NULL, NULL};
 /**
  * main - Entry Function
  * @argc: int
@@ -8,6 +7,7 @@ Montydata monty_data = {NULL, NULL, NULL};
  */
 int main(int argc, char *argv[])
 {
+Montydata monty_data = {NULL, NULL, NULL};
 size_t size = 0;
 ssize_t line_s = 1;
 unsigned int l_num = 0;

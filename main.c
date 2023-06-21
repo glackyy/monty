@@ -27,7 +27,7 @@ while (line_s > 0)
 	monty_data.line = NULL;
 	line_s = getline(&(monty_data.line), &size, monty_data.file);
 	l_num++;
-	if (line_s > 0)
+	if (line_s > 0i && monty.data.line[0] != '#')
 		exec_cmd(monty_data.line, l_num, &monty_data.h);
 	free(monty_data.line);
 }

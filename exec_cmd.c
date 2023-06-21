@@ -21,6 +21,7 @@ instruction_t operate[] = {
 		{"sub", sub},
 		{"div", _div},
 		{"mul", _mul},
+		{"mod", _mod},
 		{NULL, NULL}
 	};
 f = strtok(line, " \n\t\r\a\v");

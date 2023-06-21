@@ -66,5 +66,5 @@ void free_stack(stack_t **stack);
 void free_all(void);
 void _div(stack_t **s, unsigned int l_num);
 void _mul(stack_t **s, unsigned int l_num);
-
+void _mod(stack_t **s, unsigned int l_num);
 #endif

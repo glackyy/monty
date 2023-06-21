@@ -1,9 +1,12 @@
 #ifndef MONTY_H
 #define MONTY_H
-#define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include <string.h>
+#include <ctype.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -32,9 +35,33 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-void push(stack_t **s, unsigned int l_num, char *arg);
+/**
+ * struct Monty_data_s - struct
+ * @h: stack_t
+ * @file: FILE
+ * @line: char
+ *
+ * Description : data usage
+ */
+typedef struct Monty_data_s
+{
+	stack_t *h;
+	FILE *file;
+	char *line;
+} Montydata;
+extern int val;
+extern Montydata monty_data;
+ssize_t getline(char **line_n, size_t *n, FILE *str);
+int exec_cmd(char *, unsigned int, stack_t**);
+int _isdig(char *c);
+void push(stack_t **s, unsigned int l_num);
 void pall(stack_t **s, unsigned int l_num);
 void pint(stack_t **s, unsigned int l_num);
-stack_t *create_n_node(int val);
-void exec_bytcode(instruction_t *inst, stack_t **s, unsigned int l_num);
+void pop(stack_t **s, unsigned int l_num);
+void swap(stack_t **s, unsigned int l_num);
+void add(stack_t **s, unsigned int l_num);
+void nop(stack_t **s, unsigned int l_num);
+void free_stack(stack_t **stack);
+void free_all();
+
 #endif

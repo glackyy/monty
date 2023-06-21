@@ -1,27 +1,25 @@
 #include "monty.h"
+int val;
 /**
  * push - Entry Function
  * @s: Pointer stack_t
  * @l_num: unsigned int
  */
-void push(stack_t **s, unsigned int l_num, char *arg)
+void push(stack_t **s, unsigned int l_num)
 {
-stack_t *n_node;
-int val;
-if (arg == NULL || strlen(arg) == 0)
+stack_t *new_n = NULL;
+(void)l_num;
+new_n = malloc(sizeof(stack_t));
+if (new_n == NULL)
 {
-	fprintf(stderr, "L%d: usage: push integer\n", l_num);
+	fprintf(stderr, "Error: malloc failed\n");
+	free_all();
+	free_stack(s);
 	exit(EXIT_FAILURE);
 }
-val = atoi(arg);
-if (val == 0 && arg[0] != '0')
-{
-	fprintf(stderr, "L%d: usage: push integer\n", l_num);
-	exit(EXIT_FAILURE);
-}
-n_node = create_n_node(val);
-n_node->next = *s;
+new_n->n = val;
+new_n->next = *s;
 if (*s != NULL)
-	(*s)->prev = n_node;
-*s = n_node;
+	(*s)->prev = new_n;
+*s = new_n;
 }

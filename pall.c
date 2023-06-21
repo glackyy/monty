@@ -6,11 +6,12 @@
  */
 void pall(stack_t **s, unsigned int l_num)
 {
-stack_t *curr = *s;
+stack_t *curr = NULL;
 (void)l_num;
+curr = *s;
 while (curr != NULL)
 {
-	printf("%d\n", curr->n);
+	fprintf(stdout, "%d\n", curr->n);
 	curr = curr->next;
 }
 }

@@ -20,6 +20,7 @@ instruction_t operate[] = {
 		{"nop", nop},
 		{"sub", sub},
 		{"div", _div},
+		{"mul", _mul},
 		{NULL, NULL}
 	};
 f = strtok(line, " \n\t\r\a\v");
